@@ -70,6 +70,7 @@ for step in steps:
 
 print(result)
 ''' # 체스 기사 문제
+'''
 n, m = [int(i) for i in input().split()]
 nx, ny, d = [int(i) for i in input().split()]
 pos = [nx, ny] #현위치
@@ -119,3 +120,30 @@ while result != have_to_go:
         result += 1 #이동횟수 증가
 
 print(result)
+''' #게임 구현
+#기출
+'''
+score = input()
+l = len(score)
+if sum([int(i) for i in score[:l//2]]) == sum([int(i) for i in score[l//2:]]):
+    print("LUCKY")
+else:
+    print("READY")
+''' #럭키스트레이트
+'''
+from collections import defaultdict
+s_input = input()
+dict = defaultdict(int)
+sum = 0
+result = ""
+for s in s_input:
+    if s.isdigit():
+        sum += int(s)
+    else:
+        dict[s] += 1
+for s in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ':
+    if s in dict.keys():
+        result += s*dict[s]
+result += str(sum)
+print(result)
+'''
